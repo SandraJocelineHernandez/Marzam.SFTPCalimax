@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{75546D09-C181-4400-9897-5F2E75488428}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BRL", "BRL", "{A822DA87-BEED-4028-A5FC-D4A4D7AA0738}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BEL", "BEL", "{B9C02633-F123-4DA7-8ED8-E508244466B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C55F0268-C86B-42E0-A259-4D73460B2E27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marzam.SFTPCalimax.BEL", "Marzam.SFTPCalimax.BEL\Marzam.SFTPCalimax.BEL.csproj", "{74B16730-475F-46D0-B128-2800FB081311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marzam.SFTPCalimax.BRL", "Marzam.SFTPCalimax.BRL\Marzam.SFTPCalimax.BRL.csproj", "{36C06EEE-4EBF-4977-9A23-5F3A12161523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marzam.SFTPCalimax.DAL", "Marzam.SFTPCalimax.DAL\Marzam.SFTPCalimax.DAL.csproj", "{FDE30C3F-6814-4C92-BF88-D86EEBE91423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marzam.SFTPCalimax.Consola", "Marzam.SFTPCalimax.Consola\Marzam.SFTPCalimax.Consola.csproj", "{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B16730-475F-46D0-B128-2800FB081311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B16730-475F-46D0-B128-2800FB081311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B16730-475F-46D0-B128-2800FB081311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B16730-475F-46D0-B128-2800FB081311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C06EEE-4EBF-4977-9A23-5F3A12161523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C06EEE-4EBF-4977-9A23-5F3A12161523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C06EEE-4EBF-4977-9A23-5F3A12161523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C06EEE-4EBF-4977-9A23-5F3A12161523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE30C3F-6814-4C92-BF88-D86EEBE91423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE30C3F-6814-4C92-BF88-D86EEBE91423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE30C3F-6814-4C92-BF88-D86EEBE91423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE30C3F-6814-4C92-BF88-D86EEBE91423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74B16730-475F-46D0-B128-2800FB081311} = {B9C02633-F123-4DA7-8ED8-E508244466B9}
+		{36C06EEE-4EBF-4977-9A23-5F3A12161523} = {A822DA87-BEED-4028-A5FC-D4A4D7AA0738}
+		{FDE30C3F-6814-4C92-BF88-D86EEBE91423} = {75546D09-C181-4400-9897-5F2E75488428}
+		{90C3CE4D-FA39-4C74-9B5B-1275CF1CF927} = {C55F0268-C86B-42E0-A259-4D73460B2E27}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CB9DD7E-4870-4D54-8C17-11FA36D60C7A}
+	EndGlobalSection
+EndGlobal
