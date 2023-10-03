@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
+using System.Linq;
 using Serilog;
 
 namespace Marzam.SFTPCalimax.Consola
@@ -10,7 +12,30 @@ namespace Marzam.SFTPCalimax.Consola
         {
             try
             {
-                Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("ArchivoLogInicio-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+                string path = ConfigurationManager.AppSettings["RutaLog"];
+                Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File(path + "Log-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+      
+                var fecha = DateTime.Now;
+
+                var ultimoDia = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+                if (fecha.Day == ultimoDia)
+                {
+                    Log.Information($"El día de hoy {fecha} se eliminaran los archivos existentes de Log correspondientes a este mes");
+                    string[] archivosLog = Directory.GetFiles(path);
+
+                    int total = archivosLog.Count();
+                    
+                    foreach (var archivo in archivosLog)
+                    { 
+                        if(total > 1)
+                        {
+                            File.Delete(archivo.ToString());
+                        }
+                        total--;
+                    }
+                }
+
                 Log.Information("Programa ejecutandose \n\n");
 
                 int TimeHours1 = int.Parse(ConfigurationManager.AppSettings["HorasProceso1"]);

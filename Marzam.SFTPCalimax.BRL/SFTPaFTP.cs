@@ -15,7 +15,7 @@ namespace Marzam.SFTPCalimax.BRL
     {
         public static void AcarreoIn(object sender, ElapsedEventArgs e)
         {
-            Log.Information("Proceso Iniciado \n");
+            Log.Information("Proceso 1 Iniciado \n");
 
             string HostSftp = ConfigurationManager.AppSettings["HostSftp"];
             int PortSftp = int.Parse(ConfigurationManager.AppSettings["PortSftp"]);
@@ -28,11 +28,9 @@ namespace Marzam.SFTPCalimax.BRL
             string PasswordFtp = ConfigurationManager.AppSettings["PasswordFtp"];
             string ftpUploadPathIn = ConfigurationManager.AppSettings["FtpUploadPathIn"];
 
-            var Delete = ConfigurationManager.AppSettings["EliminarProceso1"];
+            int Delete = int.Parse(ConfigurationManager.AppSettings["EliminarProceso1"]);
             string Extension = ConfigurationManager.AppSettings["ExtensionProceso1"];
             
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Information().WriteTo.Console().WriteTo.File("ArchivoLog-.txt", rollingInterval: RollingInterval.Day).CreateLogger();
-
             byte[] document = new byte[0];
             List<string> list = new List<string>();
             List<object> tamaños = new List<object>();
@@ -63,7 +61,7 @@ namespace Marzam.SFTPCalimax.BRL
                        
                         if (archivo.Count > 0)
                         {
-                            if(Delete == "true" || Delete == "True" || Delete == "TRUE")
+                            if(Delete == 1)
                             {
                                 Log.Information($"{archivo.Count} archivo(s) encontrado(s)");
                                 foreach (var listArchivos in archivo)
@@ -166,7 +164,7 @@ namespace Marzam.SFTPCalimax.BRL
                     }
                     else
                     {
-                        Log.Error("No se logro crear la conexión");
+                        Log.Error("No se logro crear la conexión, verifica las credenciales");
                     }
                 }
                 
@@ -208,7 +206,7 @@ namespace Marzam.SFTPCalimax.BRL
                         }
                         else
                         {
-                            Log.Information("No hay archivos por subir");
+                            Log.Information("No se pueden subir los archivos por un error en la descarga");
                         }
 
                         Log.Information("\n");
@@ -218,7 +216,7 @@ namespace Marzam.SFTPCalimax.BRL
                     }
                     else
                     {
-                        Log.Information("No se logro establecer la conexión");
+                        Log.Information("No se logro establecer la conexión debido a un error desconocido");
                     }
                 }
                 else
